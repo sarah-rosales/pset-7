@@ -5,11 +5,23 @@ function commonEnd(a, b) {
 
   // write your code here
   a_firstElement = a[0];
-  a_lastElement = a.length;
+  a_lastElement = a[a.length - 1];
   b_firstElement = b[0];
-  b_lastElement = b.length;
+  b_lastElement = b[b.length - 1];
 
-  if (a_firstElement === b_firstElement || a_lastElement === b_lastElement) {
+  if (a_firstElement === undefined) {
+    return false;
+  } else if (a_lastElement === undefined) {
+    return false;
+  } else if (b_firstElement === undefined) {
+    return false;
+  } else if (b_lastElement === undefined) {
+    return false;
+  } else if (a_firstElement !== b_firstElement) {
+    return false;
+  } else if (a_lastElement !== b_lastElement) {
+    return false;
+  } else if (a_firstElement === b_firstElement || a_lastElement === b_lastElement) {
     return true;
   }
 }
