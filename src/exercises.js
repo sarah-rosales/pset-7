@@ -4,6 +4,14 @@ function commonEnd(a, b) {
   }
 
   // write your code here
+  a_firstElement = a[0];
+  a_lastElement = a.length;
+  b_firstElement = b[0];
+  b_lastElement = b.length;
+
+  if (a_firstElement === b_firstElement || a_lastElement === b_lastElement) {
+    return true;
+  }
 }
 
 function endsMeet(values, n) {
