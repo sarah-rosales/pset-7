@@ -37,7 +37,14 @@ function endsMeet(values, n) {
 }
 
 function difference(numbers) {
+  if (!numbers || numbers.length === 0) {
+    return false;
+  }
+  var minimum = Math.min(numbers);
+  var maximum = Math.max(numbers);
+  let difference = maximum - minimum;
 
+  return difference;
 }
 
 function max(number) {
