@@ -9,20 +9,12 @@ function commonEnd(a, b) {
   b_firstElement = b[0];
   b_lastElement = b[b.length - 1];
 
-  if (a_firstElement === undefined) {
-    return false;
-  } else if (a_lastElement === undefined) {
-    return false;
-  } else if (b_firstElement === undefined) {
-    return false;
-  } else if (b_lastElement === undefined) {
-    return false;
-  } else if (a_firstElement !== b_firstElement) {
-    return false;
-  } else if (a_lastElement !== b_lastElement) {
-    return false;
-  } else if (a_firstElement === b_firstElement || a_lastElement === b_lastElement) {
+  if (a_firstElement === b_firstElement) {
     return true;
+  } else if (a_lastElement === b_lastElement) {
+    return true;
+  } else {
+    return false;
   }
 }
 
