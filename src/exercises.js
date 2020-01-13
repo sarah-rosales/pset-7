@@ -3,7 +3,6 @@ function commonEnd(a, b) {
     return false;
   }
 
-  // write your code here
   a_firstElement = a[0];
   a_lastElement = a[a.length - 1];
   b_firstElement = b[0];
@@ -19,11 +18,26 @@ function commonEnd(a, b) {
 }
 
 function endsMeet(values, n) {
-  // write your code here
+  if (!values || values.length === 0) {
+    return false;
+  }
+    let firstValue = values[0];
+    let lastValue = values[values.length - 1];
+
+  if (firstValue = values[0]) {
+    values.unshift(firstValue)
+    return true;
+  } else if (lastValue = values[values.length - 1]) {
+    values.push(lastValue)
+    return true;
+  } else {
+    return false;
+  }
+  //oooooooppppp idk what to doooooo shhhooooppp
 }
 
 function difference(numbers) {
-  // write your code here
+
 }
 
 function max(number) {
