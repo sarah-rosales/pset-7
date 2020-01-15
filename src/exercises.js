@@ -18,32 +18,30 @@ function commonEnd(a, b) {
 }
 
 function endsMeet(values, n) {
+  var newArray = [];
   if (!values || values.length === 0) {
     return false;
-  }
-    let firstValue = values[0];
-    let lastValue = values[values.length - 1];
-
-  if (firstValue = values[0]) {
-    values.unshift(firstValue)
-    return true;
-  } else if (lastValue = values[values.length - 1]) {
-    values.push(lastValue)
-    return true;
   } else {
-    return false;
+    for (let i = 0; i < n; i++) {
+      newArray = values.slice(0, n);
+    }
   }
-  //oooooooppppp idk what to doooooo shhhooooppp
 }
 
+
 function difference(numbers) {
+  // var minimum = Math.min(numbers);
+  // var maximum = Math.max(numbers);
+  //
   if (!numbers || numbers.length === 0) {
     return false;
   }
-  var minimum = Math.min(numbers);
-  var maximum = Math.max(numbers);
-  let difference = maximum - minimum;
-
+  var sorted = numbers.slice().sort(function(a,b) {
+    return a - b;
+  });
+  var smallest = sorted[0],
+      largest = sorted[sorted.length - 1];
+  let difference = largest - smallest
   return difference;
 }
 
