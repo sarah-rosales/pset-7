@@ -59,7 +59,18 @@ function difference(numbers) {
 }
 
 function max(number) {
-  // write your code here
+  if (!number || number.length < 3 || number.length % 2 === 0 || number.some(isNaN)) {
+    return undefined;
+  } else {
+    let newArray = []
+
+    let first = number[0];
+    let middle = number[Math.floor(number.length/2)];
+    let last = number[number.length - 1];
+    newArray.push(first, middle, last);
+    let largest = Number(Math.max.apply(null, newArray));
+    return largest;
+  }
 }
 
 function middle(values) {
