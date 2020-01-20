@@ -72,17 +72,24 @@ function middle(values) {
   if (!values || values.length % 2 === 0 || values.length < 3) {
     return [];
   } else {
-    let newArray = [];
-    let middle = Math.floor(values.length / 2);
-    newArray.push(values[middle - 1], values[middle], values[middle + 1]);
-    return newArray;
+    var middle = values[Math.floor((values.length - 1) / 2) - 1];
+    var middleSecond = values[(values.length - 1) / 2];
+    return [middle, middleSecond];
   }
 }
 
 function increasing(numbers) {
-  if (!numbers || numbers.length === 0 || numbers.length < 3 || numbers.some(isNaN) || !Number.isInteger(number)) {
-    return false;
+  if (!numbers || numbers.length < 3 || numbers.some(isNaN) || Number.isInteger(numbers)) {
+    return undefined;
+  } else {
+    for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] < numbers[i + 1] && numbers[i + 1] < numbers[i + 2]) {
+        return true;
+        break;
+      }
+    }
   }
+  return false;
 }
 
 function everywhere(values, x) {
@@ -90,7 +97,8 @@ function everywhere(values, x) {
 }
 
 function consecutive(numbers) {
-  // write your code here
+  let num = 0;
+
 }
 
 function balance(numbers) {
