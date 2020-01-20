@@ -45,21 +45,17 @@ function endsMeet(values, n) {
   }
 }
 
-
 function difference(numbers) {
-  // var minimum = Math.min(numbers);
-  // var maximum = Math.max(numbers);
-  //
-  if (!numbers || numbers.length === 0) {
-    return false;
+
+  let minimum = Number(Math.min.apply(null, numbers));
+  let maximum = Number(Math.max.apply(null, numbers));
+
+  if (!numbers || numbers.length < 1 || numbers.some(isNaN)) {
+    return undefined;
+  } else {
+    let difference = maximum - minimum
+    return difference;
   }
-  var sorted = numbers.slice().sort(function(a,b) {
-    return a - b;
-  });
-  var smallest = sorted[0],
-      largest = sorted[sorted.length - 1];
-  let difference = largest - smallest
-  return difference;
 }
 
 function max(number) {
