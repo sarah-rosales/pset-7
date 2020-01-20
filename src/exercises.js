@@ -93,13 +93,38 @@ function increasing(numbers) {
 }
 
 function everywhere(values, x) {
-  // write your code here
+  let numbers = 1;
+  if (!values || values.length < 1 || x === undefined) {
+    return false;
+  }
+  else {
+    for (let i = 0; i < values.length; i++) {
+      if (values[i] !== x) {
+        if (values[i - 1] === x || values[i + 1] === x) {
+          numbers = false;
+        } else {
+          return false;
+        }
+      }
+    }
+  }
+  return true;
 }
 
 function consecutive(numbers) {
-  let num = 0;
-
-}
+  if (!numbers || Number.isInteger(numbers) || numbers.some(isNaN) || numbers.length < 3) {
+     return false;
+   } else {
+     for (let x = 1; x < numbers.length; x++) {
+       if (numbers[x - 1] % 2 === 0 && numbers[x] % 2 === 0 && numbers[x + 1] % 2 === 0) {
+         return true;
+       } else if (numbers[x - 1] % 2 === 1 && numbers[x] % 2 === 1 && numbers[x + 1] % 2 === 1) {
+         return true;
+       }
+     }
+     return false;
+   }
+ }
 
 function balance(numbers) {
   let half = 0;
