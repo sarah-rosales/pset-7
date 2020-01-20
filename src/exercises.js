@@ -99,9 +99,21 @@ function balance(numbers) {
 }
 
 function clumps(values) {
-  // write your code here
+  var clumps = 0;
+  var same;
+  var last;
+  if (!values) {
+    return -1;
+  } else {
+    for (let i = 0; i < values.length - 1; i++) {
+      if (values[i - 1] === values[i]) {
+      } else if (values[i] === values[i + 1]) {
+        clumps++;
+      }
+    }
+    return clumps;
+  }
 }
-
 /*
  * Exports all functions for use in external grader.js file. Do not modify.
  */
