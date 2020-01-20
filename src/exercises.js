@@ -19,11 +19,28 @@ function commonEnd(a, b) {
 
 function endsMeet(values, n) {
   var newArray = [];
-  if (!values || values.length === 0) {
-    return false;
+  var newArray2 = [];
+  if (!values || values.length < n || n < 1 || !Number.isInteger(n)) {
+    return [];
   } else {
-    for (let i = 0; i < n; i++) {
-      newArray = values.slice(0, n);
+    if (n === 0) {
+      return values;
+    } else {
+      for (let i = 0; i < n; i++) {
+        if (values[i] !== undefined) {
+          newArray.push(values[i]);
+        }
+      }
+      for (let i = n; i > 0; i--) {
+        if (!(values[values.length - i] === undefined)) {
+          newArray.push(values[values.length - i])
+        } else {
+          newArray = values.slice(0,n);
+          newArray2 = values.slice(values.length - n, values.length + 1);
+          newArray = newArray.concat(newArray2);
+        }
+      }
+      return newArray;
     }
   }
 }
