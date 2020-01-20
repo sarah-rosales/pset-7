@@ -19,9 +19,8 @@ function commonEnd(a, b) {
 
 function endsMeet(values, n) {
   var newArray = [];
-  var newArray2 = [];
-  if (!values || values.length < n || n < 1 || !Number.isInteger(n)) {
-    return [];
+  if (!values || values.length === 0 || values.length < n || n % 1 !== 0 || n < 0) {
+    return newArray;
   } else {
     if (n === 0) {
       return values;
@@ -32,12 +31,8 @@ function endsMeet(values, n) {
         }
       }
       for (let i = n; i > 0; i--) {
-        if (!(values[values.length - i] === undefined)) {
+        if (values[values.length - i] !== undefined) {
           newArray.push(values[values.length - i])
-        } else {
-          newArray = values.slice(0,n);
-          newArray2 = values.slice(values.length - n, values.length + 1);
-          newArray = newArray.concat(newArray2);
         }
       }
       return newArray;
@@ -85,7 +80,9 @@ function middle(values) {
 }
 
 function increasing(numbers) {
-  // write your code here
+  if (!numbers || numbers.length === 0 || numbers.length < 3 || numbers.some(isNaN) || !Number.isInteger(number)) {
+    return false;
+  }
 }
 
 function everywhere(values, x) {
