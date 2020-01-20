@@ -94,8 +94,41 @@ function consecutive(numbers) {
 }
 
 function balance(numbers) {
-  // write your code here
-  console.log("test");
+  let half = 0;
+  let secondHalf = 0;
+  let sum;
+  let nums;
+  if (!numbers || numbers.length < 2 || numbers.some(isNaN)) {
+    return false;
+    nums = false;
+  } else {
+    for (let i = 0; i < numbers.length - 1; i++) {
+      if (Number.isInteger(numbers[i]) === false) {
+        return false;
+        nums = false;
+      }
+    }
+    for (i = 0; i < numbers.length; i++) {
+      half += numbers[i];
+    }
+    sum = half / 2;
+    if (half % 2 === 1) {
+      return false;
+      nums = false;
+    }
+    for (let i = 0; i < numbers.length - 1; i++) {
+      secondHalf += numbers[i]
+      if (secondHalf === sum) {
+        return true;
+        nums = true;
+      }
+    }
+    if (nums === true) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 function clumps(values) {
@@ -114,6 +147,7 @@ function clumps(values) {
     return clumps;
   }
 }
+
 /*
  * Exports all functions for use in external grader.js file. Do not modify.
  */
